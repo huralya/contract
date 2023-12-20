@@ -13,7 +13,7 @@ contract Huralya is ERC20, Ownable2Step {
 
   uint256 private deployTimestamp;
 
-  constructor() ERC20('Huralya', 'LYA') {
+  constructor() ERC20('Huralya', 'LYA') Ownable(msg.sender) {
     deployTimestamp = block.timestamp;
     _mint(owner(), TOTAL_SUPPLY_LIMIT_PER_4_YEARS);
   }
