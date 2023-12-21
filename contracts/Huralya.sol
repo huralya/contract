@@ -23,17 +23,21 @@ contract Huralya is ERC20, Ownable2Step {
     super._burn(msg.sender, _amount);
   }
 
-  function mint() external onlyOwner {
+  function mint(uint256 _amount) external onlyOwner {
     require(
       block.timestamp >= MINT_TIMESTAP,
       'LYA: Minting is not allowed yet, please wait until the next minting interval'
     );
     require(
-      MINTED_AMOUNT < MAX_SUPPLY,
+      MINTED_AMOUNT + _amount <= MAX_SUPPLY,
       'LYA: Maximum supply reached, no more tokens can be minted'
     );
-    MINTED_AMOUNT += 100_000_000 * 10 ** 6;
-    super._mint(owner(), 100_000_000 * 10 ** 6);
+    MINTED_AMOUNT += _amount;
+    super._mint(owner(), _amount);
+  }
+
+  function remainingMintableAmount() external view returns (uint256) {
+    return MAX_SUPPLY - MINTED_AMOUNT;
   }
 
   function decimals() public view virtual override returns (uint8) {
