@@ -9,12 +9,12 @@ contract Huralya is ERC20, Ownable2Step {
 
   uint256 public constant MAX_SUPPLY = 200_000_000 * 10 ** 6;
 
-  uint256 public MINT_TIMESTAP;
+  uint256 public MINT_TIMESTAMP;
 
   uint256 public MINTED_AMOUNT = 0;
 
   constructor() ERC20('Huralya', 'LYA') {
-    MINT_TIMESTAP = block.timestamp + MINT_INTERVAL;
+    MINT_TIMESTAMP = block.timestamp + MINT_INTERVAL;
     MINTED_AMOUNT += 100_000_000 * 10 ** 6;
     _mint(owner(), 100_000_000 * 10 ** 6);
   }
@@ -25,7 +25,7 @@ contract Huralya is ERC20, Ownable2Step {
 
   function mint(uint256 _amount) external onlyOwner {
     require(
-      block.timestamp >= MINT_TIMESTAP,
+      block.timestamp >= MINT_TIMESTAMP,
       'LYA: Minting is not allowed yet, please wait until the next minting interval'
     );
     require(
