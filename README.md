@@ -1,7 +1,5 @@
-## Security
+## Security and Audit Report
 
-We take the security of our smart contract seriously. That's why we had it audited by QuillAudit, a respected smart contract security firm.
+The Huralya Smart Contract has been thoroughly audited by [QuillAudits](https://www.quillaudits.com/) to ensure the highest security standards. The full audit report can be viewed here:
 
-
-You can view the full audit report here: [Audit Report]([URL to the audit report](https://github.com/Quillhash/QuillAudit_Reports/blob/master/Huralya%20Smart%20Contract%20Audit%20Report-QuillAudits.pdf)https://github.com/Quillhash/QuillAudit_Reports/blob/master/Huralya%20Smart%20Contract%20Audit%20Report-QuillAudits.pdf).
-
+[Huralya Smart Contract Audit Report by QuillAudits](https://github.com/Quillhash/QuillAudit_Reports/blob/master/Huralya%20Smart%20Contract%20Audit%20Report-QuillAudits.pdf)
